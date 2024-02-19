@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  background-color: #020202;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 810px) {
+  .board {
+    flex-direction: row;
+  }
+}
+.board .column {
+  margin: 10px;
+  padding: 10px;
+  min-width: 250px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  background-color: #252935;
+}
+.board .column h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  margin-top: 0;
+  color: hsl(0, 0%, 100%);
+}
+.board .task-form {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  max-height: 150px;
+  margin: 10px;
+  background-color: #252935;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+.board .task-form .task-input {
+  color: hsl(0, 0%, 100%);
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  background-color: #020202;
+  cursor: pointer;
+}
+.board .task-form .task-input:focus {
+  outline: 1.5px solid hsl(0, 0%, 100%);
+}
+.board .task-form .add-task-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #020202;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.board .task-form .add-task-btn:hover {
+  background-color: #242834;
+}
+.board .task-form .add-task-btn i {
+  font-size: 30px;
+}
+.board .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(0, 0%, 100%);
+  margin: 10px 0;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  background-color: #020202;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.board .task:hover {
+  background-color: #252935;
+}
+.board .task .delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  color: white;
+  background-color: #020202;
+  border-radius: 50%;
+  border: none;
+  transition: background-color 0.3s, color 0.3s, border 0.2s;
+}
+.board .task .delete-button:hover {
+  background-color: hsl(0, 0%, 100%);
+  color: #020202;
+  border: 2px solid #020202;
+}
+
+.is-dragging {
+  background-color: red !important;
+}/*# sourceMappingURL=style.css.map */

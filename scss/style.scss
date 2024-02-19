@@ -1,0 +1,146 @@
+@import 'variables';
+@import 'reset';
+
+
+body {
+    font-family: $roboto;
+    display: flex;
+    justify-content: center;
+    background-color: $backround-black;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 810px) { 
+       flex-direction: row;
+      }
+
+    .column {
+    margin: 10px;
+    padding: 10px;
+    min-width: 250px;
+    border: 1px solid $border-thin-white;
+    border-radius: 5px;
+    background-color: $backround-navy-blue;
+
+
+    h2 {
+        font-family: $roboto;
+        font-size: 18px;
+        margin-top: 0;
+        color: $neutral-white;
+    }
+
+    }
+
+    .task-form {
+        display: flex;
+        flex-direction: column;
+        min-width: 250px;
+        max-height: 150px;
+        margin: 10px;
+        background-color: $backround-navy-blue;
+        border: 1px solid $border-thin-white;
+        border-radius: 5px;
+
+        .task-input {
+            color: $neutral-white;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid $border-thin-white;
+            border-radius: 5px;
+            background-color: $backround-black;
+            cursor: pointer;
+            &:focus {
+                outline: 1.5px solid $neutral-white;
+            }
+ 
+        }
+
+        
+        
+
+        .add-task-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 10px;
+            padding: 10px;
+            font-family: $roboto;
+            font-weight: 600;
+            font-size: 18px;
+            border-radius: 5px;
+            background-color: $backround-black;
+            color: $neutral-white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            &:hover {
+                background-color: $column-color;
+                
+            }
+
+            i {
+                font-size: 30px;
+            }
+
+          
+        }
+    }
+
+    .task {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $neutral-white;
+        margin: 10px 0;
+        padding: 0 10px;
+        border: 1px solid $border-thin-white;
+        border-radius: 5px;
+        background-color: $backround-black;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $backround-navy-blue;
+            
+        }
+
+        .delete-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            font-size: 30px;
+            color: white;
+            background-color: $backround-black;
+            border-radius: 50%;
+            border: none;
+            transition: background-color 0.3s, color 0.3s, border 0.2s;
+
+
+            &:hover {
+                background-color: $neutral-white;
+                color: $backround-black;
+                border: 2px solid $backround-black;  
+            }
+
+            
+         
+        }
+    }
+    
+}
+
+.is-dragging {
+    background-color: red !important;
+}
+
+
+
+
+
+
+
