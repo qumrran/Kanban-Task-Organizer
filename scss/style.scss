@@ -107,6 +107,10 @@ body {
             
         }
 
+        .task-content {
+            font-weight: 600;
+        }
+
         .delete-button {
             display: flex;
             align-items: center;
@@ -119,6 +123,7 @@ body {
             border-radius: 50%;
             border: none;
             transition: background-color 0.3s, color 0.3s, border 0.2s;
+            cursor: pointer;
 
 
             &:hover {
@@ -135,7 +140,7 @@ body {
 }
 
 .is-dragging {
-    background-color: red !important;
+    opacity: 0.3;
 }
 
 

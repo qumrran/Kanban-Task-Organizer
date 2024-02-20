@@ -99,6 +99,9 @@ body {
 .board .task:hover {
   background-color: #252935;
 }
+.board .task .task-content {
+  font-weight: 600;
+}
 .board .task .delete-button {
   display: flex;
   align-items: center;
@@ -111,6 +114,7 @@ body {
   border-radius: 50%;
   border: none;
   transition: background-color 0.3s, color 0.3s, border 0.2s;
+  cursor: pointer;
 }
 .board .task .delete-button:hover {
   background-color: hsl(0, 0%, 100%);
@@ -119,5 +123,5 @@ body {
 }
 
 .is-dragging {
-  background-color: red !important;
+  opacity: 0.3;
 }/*# sourceMappingURL=style.css.map */
