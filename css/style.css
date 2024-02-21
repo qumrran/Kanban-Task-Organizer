@@ -34,23 +34,38 @@ body {
   border-radius: 5px;
   background-color: #252935;
 }
-.board .column h2 {
+.board .column .column-title {
+  display: flex;
+  justify-content: space-between;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
-  margin-top: 0;
+  margin: 0 0 40px 0;
   color: hsl(0, 0%, 100%);
+}
+.board .column .column-title .task-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+  background-color: hsl(0, 0%, 100%);
+  color: #252935;
+  border-radius: 50%;
+  font-size: 14px;
 }
 .board .task-form {
   display: flex;
   flex-direction: column;
   min-width: 250px;
-  max-height: 150px;
+  height: 240px;
   margin: 10px;
-  background-color: #252935;
+  background-color: #020202;
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 5px;
 }
 .board .task-form .task-input {
+  height: 44.8px;
   color: hsl(0, 0%, 100%);
   margin: 10px;
   padding: 10px;
@@ -62,26 +77,30 @@ body {
 .board .task-form .task-input:focus {
   outline: 1.5px solid hsl(0, 0%, 100%);
 }
-.board .task-form .add-task-btn {
+.board .task-form .add-task-btn, .board .task-form .clear-tasks-btn {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  margin: 10px;
+  justify-content: space-between;
+  margin: 20px 10px 10px 10px;
   padding: 10px;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-size: 18px;
   border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   background-color: #020202;
   color: hsl(0, 0%, 100%);
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.board .task-form .add-task-btn:hover {
+.board .task-form .add-task-btn:hover, .board .task-form .clear-tasks-btn:hover {
   background-color: #242834;
 }
-.board .task-form .add-task-btn i {
-  font-size: 30px;
+.board .task-form .add-task-btn i, .board .task-form .clear-tasks-btn i {
+  font-size: 20px;
+}
+.board .task-form .clear-tasks-btn:hover {
+  background-color: hsla(12, 96%, 50%, 0.359);
 }
 .board .task {
   display: flex;
@@ -106,10 +125,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-  color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: hsl(0, 0%, 100%);
   background-color: #020202;
   border-radius: 50%;
   border: none;

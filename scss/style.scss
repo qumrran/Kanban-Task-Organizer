@@ -1,151 +1,152 @@
 @import 'variables';
 @import 'reset';
 
-
 body {
-    font-family: $roboto;
-    display: flex;
-    justify-content: center;
-    background-color: $backround-black;
+	font-family: $roboto;
+	display: flex;
+	justify-content: center;
+	background-color: $backround-black;
 }
 
 .board {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-    @media (min-width: 810px) { 
-       flex-direction: row;
-      }
+	@media (min-width: 810px) {
+		flex-direction: row;
+	}
 
-    .column {
-    margin: 10px;
-    padding: 10px;
-    min-width: 250px;
-    border: 1px solid $border-thin-white;
-    border-radius: 5px;
-    background-color: $backround-navy-blue;
+	.column {
+		margin: 10px;
+		padding: 10px;
+		min-width: 250px;
+		border: 1px solid $border-thin-white;
+		border-radius: 5px;
+		background-color: $backround-navy-blue;
 
+		.column-title {
+			display: flex;
+			justify-content: space-between;
+			font-family: $roboto;
+			font-size: 18px;
+			margin: 0 0 40px 0;
+			color: $neutral-white;
 
-    h2 {
-        font-family: $roboto;
-        font-size: 18px;
-        margin-top: 0;
-        color: $neutral-white;
-    }
+			.task-count {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 20px;
+				height: 20px;
+				margin: 0 10px;
+				background-color: $neutral-white;
+				color: $backround-navy-blue;
+				border-radius: 50%;
+				font-size: 14px;
+			}
+		}
+	}
 
-    }
+	.task-form {
+		display: flex;
+		flex-direction: column;
+		min-width: 250px;
+		height: 240px;
+		margin: 10px;
+		background-color: $backround-black;
+		border: 1px solid $border-thin-white;
+		border-radius: 5px;
 
-    .task-form {
-        display: flex;
-        flex-direction: column;
-        min-width: 250px;
-        max-height: 150px;
-        margin: 10px;
-        background-color: $backround-navy-blue;
-        border: 1px solid $border-thin-white;
-        border-radius: 5px;
+		.task-input {
+			height: 44.8px;
+			color: $neutral-white;
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid $border-thin-white;
+			border-radius: 5px;
+			background-color: $backround-black;
+			cursor: pointer;
+			&:focus {
+				outline: 1.5px solid $neutral-white;
+			}
+		}
 
-        .task-input {
-            color: $neutral-white;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid $border-thin-white;
-            border-radius: 5px;
-            background-color: $backround-black;
-            cursor: pointer;
-            &:focus {
-                outline: 1.5px solid $neutral-white;
-            }
- 
-        }
+		.add-task-btn,
+		.clear-tasks-btn {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 20px 10px 10px 10px;
+			padding: 10px;
+			font-family: $roboto;
+			font-weight: 600;
+			font-size: 18px;
+			border-radius: 5px;
+			border: 1px solid $border-thin-white;
+			background-color: $backround-black;
+			color: $neutral-white;
+			cursor: pointer;
+			transition: background-color 0.3s;
+			&:hover {
+				background-color: $column-color;
+			}
 
-        
-        
+			i {
+				font-size: 20px;
+			}
+		}
 
-        .add-task-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            margin: 10px;
-            padding: 10px;
-            font-family: $roboto;
-            font-weight: 600;
-            font-size: 18px;
-            border-radius: 5px;
-            background-color: $backround-black;
-            color: $neutral-white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            &:hover {
-                background-color: $column-color;
-                
-            }
+		.clear-tasks-btn {
+			&:hover {
+				background-color: $neutral-red;
+			}
+		}
+	}
 
-            i {
-                font-size: 30px;
-            }
+	.task {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: $neutral-white;
+		margin: 10px 0;
+		padding: 0 10px;
+		border: 1px solid $border-thin-white;
+		border-radius: 5px;
+		background-color: $backround-black;
+		cursor: pointer;
+		transition: background-color 0.3s;
 
-          
-        }
-    }
+		&:hover {
+			background-color: $backround-navy-blue;
+		}
 
-    .task {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: $neutral-white;
-        margin: 10px 0;
-        padding: 0 10px;
-        border: 1px solid $border-thin-white;
-        border-radius: 5px;
-        background-color: $backround-black;
-        cursor: pointer;
-        transition: background-color 0.3s;
+		.task-content {
+			font-weight: 600;
+		}
 
-        &:hover {
-            background-color: $backround-navy-blue;
-            
-        }
+		.delete-button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 20px;
+			height: 20px;
+			font-size: 20px;
+			color: $neutral-white;
+			background-color: $backround-black;
+			border-radius: 50%;
+			border: none;
+			transition: background-color 0.3s, color 0.3s, border 0.2s;
+			cursor: pointer;
 
-        .task-content {
-            font-weight: 600;
-        }
-
-        .delete-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            font-size: 30px;
-            color: white;
-            background-color: $backround-black;
-            border-radius: 50%;
-            border: none;
-            transition: background-color 0.3s, color 0.3s, border 0.2s;
-            cursor: pointer;
-
-
-            &:hover {
-                background-color: $neutral-white;
-                color: $backround-black;
-                border: 2px solid $backround-black;  
-            }
-
-            
-         
-        }
-    }
-    
+			&:hover {
+				background-color: $neutral-white;
+				color: $backround-black;
+				border: 2px solid $backround-black;
+			}
+		}
+	}
 }
 
 .is-dragging {
-    opacity: 0.3;
+	opacity: 0.3;
 }
-
-
-
-
-
-
-
