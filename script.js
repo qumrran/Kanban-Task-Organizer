@@ -6,33 +6,38 @@ const clearAllTasks = document.querySelector('.clear-tasks-btn');
 
 // Funkcja tworzenia i usuwania nowego zadania
 function createTask(taskText) {
-	const taskElement = document.createElement('div');
-	taskElement.classList.add('task');
+    const taskElement = document.createElement('div');
+    taskElement.classList.add('task');
 
-	const taskContent = document.createElement('p');
-	taskContent.textContent = taskText;
-	taskContent.classList.add('task-content');
+    const taskContent = document.createElement('p');
+    taskContent.textContent = taskText;
+    taskContent.classList.add('task-content');
 
-	const deleteButton = document.createElement('button');
-	deleteButton.innerHTML = '<i class="fas fa-minus-circle"></i>';
-	deleteButton.classList.add('delete-button');
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = '<i class="fas fa-minus-circle"></i>';
+    deleteButton.classList.add('delete-button');
 
-	taskElement.appendChild(taskContent);
-	taskElement.appendChild(deleteButton);
+    taskElement.appendChild(taskContent);
+    taskElement.appendChild(deleteButton);
 
-	return taskElement;
+    return taskElement;
 }
 
 // Dodawanie obsługi zdarzenia kliknięcia na kolumnach
 columns.forEach((column) => {
-	column.addEventListener('click', (event) => {
-		if (event.target.classList.contains('fas')) {
-			const taskToDelete = event.target.closest('.task');
+    column.addEventListener('click', (event) => {
+        if (event.target.classList.contains('fas')) {
+            const taskToDelete = event.target.closest('.task');
+           
 			taskToDelete.remove();
-			updateCounters();
-		}
-	});
+                updateCounters();
+            
+        }
+    });
 });
+
+
+
 
 // Funkcja, która sprawia, że element jest przeciągalny
 function makeTaskDraggable(taskElement) {
@@ -115,6 +120,7 @@ function updateCounters() {
 }
 
 // Obsługa usuwania wszystkich zadań z kolumn
+
 function clearAllTasksFromColumn(column) {
 	const tasks = column.querySelectorAll('.task');
 	tasks.forEach((task) => {

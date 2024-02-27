@@ -20,6 +20,8 @@ body {
 		margin: 10px;
 		padding: 10px;
 		min-width: 250px;
+        max-width: 350px;
+        
 		border: 1px solid $border-thin-white;
 		border-radius: 5px;
 		background-color: $backround-navy-blue;
@@ -115,6 +117,7 @@ body {
 		background-color: $backround-black;
 		cursor: pointer;
 		transition: background-color 0.3s;
+        overflow-y: scroll;
 
 		&:hover {
 			background-color: $backround-navy-blue;
@@ -122,6 +125,7 @@ body {
 
 		.task-content {
 			font-weight: 600;
+            padding-right: 20px;
 		}
 
 		.delete-button {
