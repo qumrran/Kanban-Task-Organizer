@@ -30,6 +30,7 @@ body {
   margin: 10px;
   padding: 10px;
   min-width: 250px;
+  max-width: 350px;
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   background-color: #252935;
@@ -77,7 +78,8 @@ body {
 .board .task-form .task-input:focus {
   outline: 1.5px solid hsl(0, 0%, 100%);
 }
-.board .task-form .add-task-btn, .board .task-form .clear-tasks-btn {
+.board .task-form .add-task-btn,
+.board .task-form .clear-tasks-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -93,14 +95,16 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.board .task-form .add-task-btn:hover, .board .task-form .clear-tasks-btn:hover {
+.board .task-form .add-task-btn:hover,
+.board .task-form .clear-tasks-btn:hover {
   background-color: #242834;
 }
-.board .task-form .add-task-btn i, .board .task-form .clear-tasks-btn i {
+.board .task-form .add-task-btn i,
+.board .task-form .clear-tasks-btn i {
   font-size: 20px;
 }
 .board .task-form .clear-tasks-btn:hover {
-  background-color: hsla(12, 96%, 50%, 0.359);
+  background-color: hsla(12, 96%, 50%, 0.499);
 }
 .board .task {
   display: flex;
@@ -114,12 +118,14 @@ body {
   background-color: #020202;
   cursor: pointer;
   transition: background-color 0.3s;
+  overflow-y: scroll;
 }
 .board .task:hover {
   background-color: #252935;
 }
 .board .task .task-content {
   font-weight: 600;
+  padding-right: 20px;
 }
 .board .task .delete-button {
   display: flex;
