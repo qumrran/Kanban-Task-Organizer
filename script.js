@@ -4,6 +4,16 @@ const todoColumn = document.querySelector('#todo-column');
 const columns = document.querySelectorAll('.column');
 const clearAllTasks = document.querySelector('.clear-tasks-btn');
 
+//obiekt stanu
+
+let state = {
+	toDoState: [],
+	inProgressState: [],
+	doneState: []
+};
+
+
+
 // Funkcja tworzenia i usuwania nowego zadania
 function createTask(taskText) {
     const taskElement = document.createElement('div');
@@ -17,26 +27,44 @@ function createTask(taskText) {
     deleteButton.innerHTML = '<i class="fas fa-minus-circle"></i>';
     deleteButton.classList.add('delete-button');
 
+    // Generowanie unikalnego ID na podstawie czasu
+    
+    const taskId = Date.now();
+    taskElement.setAttribute('id', taskId);
+
     taskElement.appendChild(taskContent);
     taskElement.appendChild(deleteButton);
 
+    // Dodanie zadania do stanu
+    state.toDoState.push({ id: taskId, text: taskText });
+
     return taskElement;
 }
+
+
+// Funkcja usuwająca zadanie na podstawie identyfikatora
+function deleteTaskById(taskId) {
+    for (let key in state) {
+        state[key] = state[key].filter(task => task.id !== taskId);
+    }
+}
+
 
 // Dodawanie obsługi zdarzenia kliknięcia na kolumnach
 columns.forEach((column) => {
     column.addEventListener('click', (event) => {
         if (event.target.classList.contains('fas')) {
             const taskToDelete = event.target.closest('.task');
-           
-			taskToDelete.remove();
+            const taskId = taskToDelete.id; 
+            if (taskId) {
+                deleteTaskById(taskId); 
+                taskToDelete.remove();
                 updateCounters();
-            
+                console.log(state);
+            }
         }
     });
 });
-
-
 
 
 // Funkcja, która sprawia, że element jest przeciągalny
@@ -54,35 +82,66 @@ function makeTaskDraggable(taskElement) {
 
 // Obsługa przeciągania i upuszczania elementów
 columns.forEach((zone) => {
-	zone.addEventListener('dragover', (e) => {
-		e.preventDefault();
+    zone.addEventListener('dragover', (e) => {
+        e.preventDefault();
 
-		const draggingTask = document.querySelector('.is-dragging');
+        const draggingTask = document.querySelector('.is-dragging');
 
-		if (draggingTask && draggingTask.parentNode !== zone) {
-			zone.appendChild(draggingTask);
-			updateCounters();
-		}
+        if (draggingTask && draggingTask.parentNode !== zone) {
+            zone.appendChild(draggingTask);
 
-		const mouseY = e.clientY;
-		const bottomTask = insertAboveTask(zone, mouseY);
-		const curTask = document.querySelector('.is-dragging');
+            // Pobieramy id i tekst zadania
+            const taskId = draggingTask.id;
+            const taskText = draggingTask.querySelector('.task-content').textContent;
 
-		if (!bottomTask) {
-			zone.appendChild(curTask);
-		} else {
-			zone.insertBefore(curTask, bottomTask);
-		}
-	});
+            // Aktualizacja stanu po przeniesieniu zadania
+            if (zone.id === 'todo-column') {
+                updateState(taskId, taskText, state.toDoState);
+            } else if (zone.id === 'in-progress-column') {
+                updateState(taskId, taskText, state.inProgressState);
+            } else if (zone.id === 'done-column') {
+                updateState(taskId, taskText, state.doneState);
+            }
+            
+            function updateState(taskId, taskText, targetState) {
+                targetState.push({ id: taskId, text: taskText });
+            
+                // wywala zadanie z pozostałych tablic stanu
+                for (let key in state) {
+                    if (state[key] !== targetState) {
+                        state[key] = state[key].filter(task => task.id !== taskId);
+                    }
+                }
+            
+                console.log(state);
+            }
+            
+    
+            updateCounters();
+        }
+
+        const mouseY = e.clientY;
+        const bottomTask = insertAboveTask(zone, mouseY);
+        const curTask = document.querySelector('.is-dragging');
+
+        if (!bottomTask) {
+            zone.appendChild(curTask);
+        } else {
+            zone.insertBefore(curTask, bottomTask);
+        }
+    });
 });
+
 
 // Obsługa dodawania nowego zadania
 addTaskButton.addEventListener('click', () => {
 	const taskText = taskInput.value.trim();
 	if (taskText !== '') {
+		state.toDoState.push(taskText);
 		const taskElement = createTask(taskText);
 		todoColumn.appendChild(taskElement);
 		taskInput.value = '';
+		console.log(state);
 		makeTaskDraggable(taskElement);
 		updateCounters();
 	}
@@ -127,6 +186,10 @@ function clearAllTasksFromColumn(column) {
 		task.remove();
 	});
 	updateCounters();
+	state.toDoState = []; 
+    state.inProgressState = []; 
+    state.doneState = []; 
+    console.log(state);
 }
 
 clearAllTasks.addEventListener('click', () => {
@@ -134,3 +197,6 @@ clearAllTasks.addEventListener('click', () => {
 		clearAllTasksFromColumn(column);
 	});
 });
+
+
+console.log(state);
