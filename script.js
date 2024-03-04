@@ -137,7 +137,6 @@ columns.forEach((zone) => {
 addTaskButton.addEventListener('click', () => {
 	const taskText = taskInput.value.trim();
 	if (taskText !== '') {
-		state.toDoState.push(taskText);
 		const taskElement = createTask(taskText);
 		todoColumn.appendChild(taskElement);
 		taskInput.value = '';
