@@ -12,39 +12,39 @@ body {
 	display: flex;
 	flex-direction: column;
 
-	@media (min-width: 810px) {
+	@media (min-width: 67rem) {
 		flex-direction: row;
 	}
 
 	.column {
-		margin: 10px;
-		padding: 10px;
-		min-width: 250px;
-        max-width: 350px;
+		margin: 0.625rem;
+		padding: 0.625rem;
+		min-width: 15.625rem;
+        max-width: 21.875rem;
         
-		border: 1px solid $border-thin-white;
-		border-radius: 5px;
+		border: 0.063rem solid $border-thin-white;
+		border-radius: 0.313rem;
 		background-color: $backround-navy-blue;
 
 		.column-title {
 			display: flex;
 			justify-content: space-between;
 			font-family: $roboto;
-			font-size: 18px;
-			margin: 0 0 40px 0;
+			font-size: 1.125rem;
+			margin: 0 0 2.5rem 0;
 			color: $neutral-white;
 
 			.task-count {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				width: 20px;
-				height: 20px;
-				margin: 0 10px;
+				width: 1.25rem;
+				height: 1.25rem;
+				margin: 0 0.625rem;
 				background-color: $neutral-white;
 				color: $backround-navy-blue;
 				border-radius: 50%;
-				font-size: 14px;
+				font-size: 0.875rem;
 			}
 		}
 	}
@@ -52,24 +52,24 @@ body {
 	.task-form {
 		display: flex;
 		flex-direction: column;
-		min-width: 250px;
-		height: 240px;
-		margin: 10px;
+		min-width: 15.625rem;
+		height: 15rem;
+		margin: 0.625rem;
 		background-color: $backround-black;
-		border: 1px solid $border-thin-white;
-		border-radius: 5px;
+		border: 0.063rem solid $border-thin-white;
+		border-radius: 0.313rem;
 
 		.task-input {
-			height: 44.8px;
+			height: 2.8rem;
 			color: $neutral-white;
-			margin: 10px;
-			padding: 10px;
-			border: 1px solid $border-thin-white;
-			border-radius: 5px;
+			margin: 0.625rem;
+			padding: 0.625rem;
+			border: 0.063rem solid $border-thin-white;
+			border-radius: 0.25rem;
 			background-color: $backround-black;
 			cursor: pointer;
 			&:focus {
-				outline: 1.5px solid $neutral-white;
+				outline: 0.094rem solid $neutral-white;
 			}
 		}
 
@@ -78,13 +78,13 @@ body {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			margin: 20px 10px 10px 10px;
-			padding: 10px;
+			margin: 1.25rem 0.625rem 0.625rem 0.625rem;
+			padding: 0.625rem;
 			font-family: $roboto;
 			font-weight: 600;
-			font-size: 18px;
-			border-radius: 5px;
-			border: 1px solid $border-thin-white;
+			font-size: 1.125rem;
+			border-radius: 0.313rem;
+			border: 0.063rem solid $border-thin-white;
 			background-color: $backround-black;
 			color: $neutral-white;
 			cursor: pointer;
@@ -94,7 +94,7 @@ body {
 			}
 
 			i {
-				font-size: 20px;
+				font-size: 1.25rem;
 			}
 		}
 
@@ -110,10 +110,10 @@ body {
 		justify-content: space-between;
 		align-items: center;
 		color: $neutral-white;
-		margin: 10px 0;
-		padding: 0 10px;
-		border: 1px solid $border-thin-white;
-		border-radius: 5px;
+		margin: 0.625rem 0;
+		padding: 0 0.625rem;
+		border: 0.063rem solid $border-thin-white;
+		border-radius: 0.313rem;
 		background-color: $backround-black;
 		cursor: pointer;
 		transition: background-color 0.3s;
@@ -125,16 +125,16 @@ body {
 
 		.task-content {
 			font-weight: 600;
-            padding-right: 20px;
+            padding-right: 1.25rem;
 		}
 
 		.delete-button {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 20px;
-			height: 20px;
-			font-size: 20px;
+			width: 1.25rem;
+			height: 1.25rem;
+			font-size: 1.25rem;
 			color: $neutral-white;
 			background-color: $backround-black;
 			border-radius: 50%;
@@ -145,7 +145,7 @@ body {
 			&:hover {
 				background-color: $neutral-white;
 				color: $backround-black;
-				border: 2px solid $backround-black;
+				border: 0.125rem solid $backround-black;
 			}
 		}
 	}

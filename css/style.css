@@ -21,75 +21,75 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 810px) {
+@media (min-width: 67rem) {
   .board {
     flex-direction: row;
   }
 }
 .board .column {
-  margin: 10px;
-  padding: 10px;
-  min-width: 250px;
-  max-width: 350px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
+  margin: 0.625rem;
+  padding: 0.625rem;
+  min-width: 15.625rem;
+  max-width: 21.875rem;
+  border: 0.063rem solid rgba(255, 255, 255, 0.8);
+  border-radius: 0.313rem;
   background-color: #252935;
 }
 .board .column .column-title {
   display: flex;
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  margin: 0 0 40px 0;
+  font-size: 1.125rem;
+  margin: 0 0 2.5rem 0;
   color: hsl(0, 0%, 100%);
 }
 .board .column .column-title .task-count {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  margin: 0 10px;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 0.625rem;
   background-color: hsl(0, 0%, 100%);
   color: #252935;
   border-radius: 50%;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .board .task-form {
   display: flex;
   flex-direction: column;
-  min-width: 250px;
-  height: 240px;
-  margin: 10px;
+  min-width: 15.625rem;
+  height: 15rem;
+  margin: 0.625rem;
   background-color: #020202;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
+  border: 0.063rem solid rgba(255, 255, 255, 0.8);
+  border-radius: 0.313rem;
 }
 .board .task-form .task-input {
-  height: 44.8px;
+  height: 2.8rem;
   color: hsl(0, 0%, 100%);
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
+  margin: 0.625rem;
+  padding: 0.625rem;
+  border: 0.063rem solid rgba(255, 255, 255, 0.8);
+  border-radius: 0.25rem;
   background-color: #020202;
   cursor: pointer;
 }
 .board .task-form .task-input:focus {
-  outline: 1.5px solid hsl(0, 0%, 100%);
+  outline: 0.094rem solid hsl(0, 0%, 100%);
 }
 .board .task-form .add-task-btn,
 .board .task-form .clear-tasks-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 10px 10px 10px;
-  padding: 10px;
+  margin: 1.25rem 0.625rem 0.625rem 0.625rem;
+  padding: 0.625rem;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
-  font-size: 18px;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  font-size: 1.125rem;
+  border-radius: 0.313rem;
+  border: 0.063rem solid rgba(255, 255, 255, 0.8);
   background-color: #020202;
   color: hsl(0, 0%, 100%);
   cursor: pointer;
@@ -101,7 +101,7 @@ body {
 }
 .board .task-form .add-task-btn i,
 .board .task-form .clear-tasks-btn i {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .board .task-form .clear-tasks-btn:hover {
   background-color: hsla(12, 96%, 50%, 0.499);
@@ -111,10 +111,10 @@ body {
   justify-content: space-between;
   align-items: center;
   color: hsl(0, 0%, 100%);
-  margin: 10px 0;
-  padding: 0 10px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
+  margin: 0.625rem 0;
+  padding: 0 0.625rem;
+  border: 0.063rem solid rgba(255, 255, 255, 0.8);
+  border-radius: 0.313rem;
   background-color: #020202;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -125,15 +125,15 @@ body {
 }
 .board .task .task-content {
   font-weight: 600;
-  padding-right: 20px;
+  padding-right: 1.25rem;
 }
 .board .task .delete-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
   color: hsl(0, 0%, 100%);
   background-color: #020202;
   border-radius: 50%;
@@ -144,7 +144,7 @@ body {
 .board .task .delete-button:hover {
   background-color: hsl(0, 0%, 100%);
   color: #020202;
-  border: 2px solid #020202;
+  border: 0.125rem solid #020202;
 }
 
 .is-dragging {
